@@ -19,7 +19,7 @@ Organization:
 
 __Note:__ This repository is inspired by the work carried out by Benjamin Nowak (@BjnNowak)  
 
-### Plots ###
+### Plots from vignettes ###
 
 [Mainland Portugal Map, HEX GRID w/100km2 area (loaded from present GitHub Link)](https://github.com/lbarqueira/pt1_db/blob/main/plots/hex_map_100km2.png)
 
