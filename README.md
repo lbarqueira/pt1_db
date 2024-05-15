@@ -14,3 +14,6 @@ Organization:
   - hex_map_100.r: R code to generate hexagonal map of Mainland Portugal, cropped by Mainland geometry (border), with 100 km2 area for each (not all) hex polygon. The output of this script is present on the folder __maps__.
 
 - __vignettes__: practical examples to help users get the most out of this containts.  
+
+
+__Note:__ This repository is inspired by the work carried out by Benjamin Nowak (@BjnNowak)

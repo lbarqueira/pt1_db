@@ -1,5 +1,5 @@
 ############################################################################
-#   FUNCTION    get_map()        HEX MAP 100 LOAD from GitHub
+#   FUNCTION    get_map()        HEX MAP 100km2 LOAD from GitHub
 ############################################################################
 
 # 1. INSTALL & LOAD PACKAGES
