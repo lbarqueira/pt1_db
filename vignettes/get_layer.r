@@ -53,3 +53,11 @@ pop <- get_layer(layer = "human")
 
 names(pop) # [1] "grid_id"             "population_area_km2"
 nrow(pop) # [1] 1008
+summary(pop)
+#     grid_id       population_area_km2
+#  Min.   :   1.0   Min.   :   0.000
+#  1st Qu.: 252.8   1st Qu.:   5.769
+#  Median : 504.5   Median :  16.643
+#  Mean   : 504.5   Mean   : 109.227
+#  3rd Qu.: 756.2   3rd Qu.:  70.074
+#  Max.   :1008.0   Max.   :6202.490
