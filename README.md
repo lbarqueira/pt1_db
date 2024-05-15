@@ -17,4 +17,9 @@ Organization:
   - get_map.r: R code to implement __get_map()__, a function that loads hex gridded map of Mainland Portugal with 100km2 area for each (not all) hex polygon, __from GitHub__
 
 
-__Note:__ This repository is inspired by the work carried out by Benjamin Nowak (@BjnNowak)
+__Note:__ This repository is inspired by the work carried out by Benjamin Nowak (@BjnNowak)  
+
+### Plots ###
+
+[Mainland Portugal Map, HEX GRID w/100km2 area (loaded from present GitHub Link)]()
+

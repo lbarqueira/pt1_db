@@ -52,3 +52,21 @@ summary(st_area(hex))
 
 #      Min.   1st Qu.    Median      Mean   3rd Qu.      Max.
 #     13675 100000000 100000000  88033798 100000000 100000000
+
+# Plot and save
+
+hex |>
+  ggplot() +
+  geom_sf() +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(
+      size = 12, color = "#451a40",
+      hjust = .5
+    ),
+    plot.background = element_rect(fill = "#f5f5f2", color = NA)
+  ) +
+  labs(
+    title = "Mainland Portugal Map, HEX GRID w/100km2 area (GitHub)"
+  )
+ggsave("./plots/hex_map_100km2.png", dpi = 340)
