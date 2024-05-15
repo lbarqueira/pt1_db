@@ -11,11 +11,16 @@ This data will be called up by the future package via URL.
   - __population__: human_pop_density.csv [GHSL - Global Human Settlement Layer](https://human-settlement.emergency.copernicus.eu/download.php?ds=pop), variables ("grid_id"  "population_area_km2")
 
 - __scripts__ (R code to generate __maps__ and __data__):
+  
   - __hex_map_100.r__: R code to generate hexagonal map of Mainland Portugal, cropped by Mainland geometry (border), with 100 km2 area for each (not all) hex polygon. The output of this script is present on the folder __maps__.  
+  
   - __data_wrangling_population.r__: R code to generate ...
 
 - __vignettes__: practical examples to help users get the most out of this containts. 
+  
   - get_map.r: R code to implement __get_map()__, a function that loads hex gridded map of Mainland Portugal with 100km2 area for each (not all) hex polygon, __from GitHub__
+  
+  - get_layer.r: R code to implement __get_layer(layer)__, a function that loads ...
 
 
 __Note:__ This repository is inspired by the work carried out by Benjamin Nowak (@BjnNowak)  

@@ -4,7 +4,7 @@
 # get_map() -  Mainland Portugal HEX GRID MAP 100km2 area
 #
 # Layers:
-# - Human population density from Global Human Settlement Layer (GHSL)
+# - Human population density from Global Human Settlement Layer (GHSL) / km2
 # - (...)
 ############################################################################
 
@@ -37,8 +37,8 @@ get_layer <- function(layer) {
       "co2" #2 - CO2 emissions
     ),
     url = c(
-      "https://raw.githubusercontent.com/BjnNowak/frex_db/main/data/soil/soil_properties.csv", #1
-      "https://raw.githubusercontent.com/BjnNowak/frex_db/main/data/crop/crop_distribution.csv" #2
+      "https://raw.githubusercontent.com/lbarqueira/pt1_db/main/data/population/human_pop_density.csv", #1 # nolint
+      "https://raw.githubusercontent.com/lbarqueira/pt1_db/main/data/population/human_pop_density.csv" #2 # nolint
     )
   ) |>
     filter(name == layer)
@@ -50,3 +50,6 @@ get_layer <- function(layer) {
 
 
 pop <- get_layer(layer = "human")
+
+names(pop) # [1] "grid_id"             "population_area_km2"
+nrow(pop) # [1] 1008
