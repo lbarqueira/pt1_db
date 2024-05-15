@@ -3,7 +3,7 @@ This data will be called up by the future package via URL.
 
 Organization:
 
-- __maps__: include hex map of Mainland Portugal, cropped by Mainland geometry (border), with 100 km2 area for each (not all) hex polygon.
+- **maps**: include hex map of Mainland Portugal, cropped by Mainland geometry (border), with 100 km2 area for each (not all) hex polygon.
   - hex_cropped_portugal_100km2.gpkg
   - (other maps presented - for future projects ...)
 
