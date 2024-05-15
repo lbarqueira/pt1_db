@@ -20,7 +20,7 @@ This data will be called up by the future package via URL.
   
   - get_map.r: R code to implement __get_map()__, a function that loads hex gridded map of Mainland Portugal with 100km2 area for each (not all) hex polygon, __from GitHub__
   
-  - get_layer.r: R code to implement __get_layer(layer)__, a function that loads ...
+  - get_layer.r: R code to implement __get_layer(layer)__, a function that loads a .csv file with columns grid_id and the layer to analyse (population per km2, ...), the results from files on the __scripts__ directory
 
 
 __Note:__ This repository is inspired by the work carried out by Benjamin Nowak (@BjnNowak)  
