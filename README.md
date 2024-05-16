@@ -1,7 +1,6 @@
-The content presented here will be used in a future package (under development).
-This data will be called up by the future package via URL.  
+The content presented in this repo will be used in a future package (still under development). 
 
-### Organization: ###
+### Repo Structure: ###
 
 - __maps__: include hex map of Mainland Portugal, cropped by Mainland geometry (border), with 100 km2 area for each (not all) hex polygon.
   - hex_cropped_portugal_100km2.gpkg
@@ -29,7 +28,7 @@ This data will be called up by the future package via URL.
   - __population.r__: R code exemplifying the application of functions __get_map()__ and __get_layer(layer)__, to layer = "human" (population per km2)  
 
 
-__Note:__ This repository is inspired by the work carried out by Benjamin Nowak (@BjnNowak)  
+__Note:__ This repository is inspired by the work carried out by __Benjamin Nowak (@BjnNowak)__  
 
 ### Plots from vignettes ###
 
