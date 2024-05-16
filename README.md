@@ -33,7 +33,11 @@ __Note:__ This repository is inspired by the work carried out by Benjamin Nowak 
 
 ### Plots from vignettes ###
 
-[Mainland Portugal Map, HEX GRID w/100km2 area (loaded from present GitHub Link)](https://github.com/lbarqueira/pt1_db/blob/main/plots/hex_map_100km2.png)
-
+__Script file: get_map.r__  
 
 !["Mainland Portugal Map, HEX GRID w/100km2 area"](./plots/hex_map_100km2.png)
+
+
+__Script file: population.r__  
+
+!["Mainland Portugal Population Density per km2"](./plots/population_density.png)
