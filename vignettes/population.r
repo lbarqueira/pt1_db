@@ -83,13 +83,30 @@ ggplot(data = hex_map) +
   theme_void() +
   theme(
     plot.title = element_text(
-      size = 12, color = "#451a40",
-      hjust = .5
+      face = "bold",
+      size = 12,
+      color = "#451a40",
+      hjust = .5,
+      vjust = -2
+    ),
+    plot.subtitle = element_text(
+      size = 8,
+      color = "#451a40",
+      hjust = .5,
+      vjust = -3
+    ),
+    plot.caption = element_text(
+      size = 6,
+      color = "grey20",
+      hjust = .5,
+      vjust = 10 # 5
     ),
     plot.background = element_rect(fill = "#f8f8f7", color = NA)
   ) +
   labs(
-    title = "Mainland Portugal Population Density per km2"
+    title = "Mainland Portugal Population Density per km2",
+    subtitle = "Hexagonal Grid of 100km2",
+    caption = "Graphic: @barqueira | Data: GHS-POP, epoch: 2020, resolution: 3 arcsec"
   )
 
 
