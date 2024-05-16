@@ -1,5 +1,5 @@
 ###############################################################################
-#                            POPULATION DENSITY
+#                           HUMAN POPULATION DENSITY
 # Dataset: Human population density from Global Human Settlement Layer (GHSL)
 # https://human-settlement.emergency.copernicus.eu/download.php?ds=pop
 # Product: GHS-POP, epoch: 2020, resolution: 3 arcsec, coordinate system: WGS84
@@ -16,7 +16,7 @@ libs <- c(
   # Additional for hex grids
   # Supporting for units and bridge raster to polygon
   "units",
-  "exactextractr",
+  "exactextractr"
 )
 
 installed_libraries <- libs %in% rownames(
@@ -37,7 +37,7 @@ invisible(
 
 
 ###########       LOAD HEX MAP 100km2 FROM GITHUB     ###############
-###########  GITHUB -  VIEW RAW AND COPY LINK ADDRESS ###############
+###########         GITHUB - COPY LINK ADDRESS        ###############
 
 # Function get_map
 get_map <- function() {
@@ -151,7 +151,7 @@ mainland_portugal_borders <- get_mainland_portugal_borders() |>
 
 plot(sf::st_geometry(mainland_portugal_borders))
 
-crs(pop_init_mosaic) == crs(vect(mainland_portugal_borders))
+crs(pop_init_mosaic) == crs(vect(mainland_portugal_borders)) # [1] TRUE
 
 ################## CROP RASTER ##############################
 get_pop_cropped <- function() {
@@ -188,7 +188,7 @@ names(pop_cropped) # [1] "GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R5_C18"
 
 # Consistent naming of the layer
 names(pop_cropped) <- "population"
-
+names(pop_cropped) # [1] "population"
 nrow(pop_cropped) # [1] 6230
 
 class(pop_cropped) # [1] "SpatRaster"
@@ -249,25 +249,25 @@ ggplot() +
 
 
 summary(hex_poly$population)
-sum(hex_poly$population)
-nrow(hex_poly)
+sum(hex_poly$population) # [1] 8549499
+nrow(hex_poly) # [1] 1008
 
 # Compute density by cell
-# Finally we just compute densities, create categories and finally the map:
+# Finally we just compute densities:
 
 hex_poly_final <- hex_poly |>
   # Compute density by cell
-  mutate(population_area_km2 = population / area_km2)
+  mutate(population_km2 = population / area_km2)
 
 names(hex_poly_final)
 
-# [1] "grid_id"             "geom"                "area_km2"
-# [4] "population"          "population_area_km2"
+# [1] "grid_id"        "geom"           "area_km2"       "population"
+# [5] "population_km2"
 
 
 ggplot(hex_poly_final) +
   geom_sf(
-    aes(fill = population_area_km2),
+    aes(fill = population_km2),
     color = "grey40",
     size = .1
   ) +
@@ -283,17 +283,17 @@ ggplot(hex_poly_final) +
 #######################################################################
 hex_poly_final
 names(hex_poly_final)
-# [1] "grid_id"             "geom"                "area_km2"
-# [4] "population"          "population_area_km2"
+# [1] "grid_id"        "geom"           "area_km2"       "population"
+# [5] "population_km2"
 
 class(hex_poly_final)
 st_crs(hex_poly_final)
 
 human_pop_density <- hex_poly_final |>
-  select(grid_id, population_area_km2) |>
+  select(grid_id, population_km2) |>
   st_drop_geometry()
 
-names(human_pop_density) # [1] "grid_id"  "population_area_km2"
+names(human_pop_density) # [1] "grid_id"        "population_km2"
 
 # Save as human_pop_density.csv
 
