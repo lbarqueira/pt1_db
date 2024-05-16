@@ -17,11 +17,11 @@ The content presented in this repo will be used in a future package (still under
 
 - __scripts__ (R code to generate __maps__ and __data__):
   
-  - __hex_map_100.r__: R code to generate hexagonal map of Mainland Portugal, cropped by Mainland geometry (border), with 100 km2 area for each (not all) hex polygon. The output of this script is present on the folder __maps__.  
+  - __hex_map_100.r__: R code to generate hexagonal grid map of Mainland Portugal, cropped by Mainland geometry (border), with 100 km2 area for each (not all) hex polygon. The output of this script is present on the folder __maps__.  
 
-  - __hex_map_25.r__: R code to generate hexagonal map of Mainland Portugal, cropped by Mainland geometry (border), with 25 km2 area for each (not all) hex polygon. The output of this script is present on the folder __maps__. 
+  - __hex_map_25.r__: R code to generate hexagonal grid map of Mainland Portugal, cropped by Mainland geometry (border), with 25 km2 area for each (not all) hex polygon. The output of this script is present on the folder __maps__. 
 
-  - __square_map_100.r__: R code to generate square map of Mainland Portugal, cropped by Mainland geometry (border), with 100 km2 area for each (not all) hex polygon. The output of this script is present on the folder __maps__. 
+  - __square_map_100.r__: R code to generate square grid map of Mainland Portugal, cropped by Mainland geometry (border), with 100 km2 area for each (not all) hex polygon. The output of this script is present on the folder __maps__. 
 
   - __data_wrangling_population.r__: R code to generate Human population density per km2.
 
