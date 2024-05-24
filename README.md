@@ -19,7 +19,7 @@ The content presented in this repo will be used in a future package (still under
 - __data__: __data__ is strictly related with __map__ (Gridded map of Mainland Portugal in hexagons of about 100 km2), through the variable __grid_id__ which is present in both files. Data was worked out based on the grid of the map
   - __population__: human_pop_density.csv, [GHSL - Global Human Settlement Layer](https://human-settlement.emergency.copernicus.eu/download.php?ds=pop), variables ("grid_id"  "population_km2")
 
-  - __co2_emission__: co2_emissions_density.csv, [Global Greenhouse Gas Emissions - EDGAR v8.0](https://edgar.jrc.ec.europa.eu/gallery?release=v80ghg&substance=CO2&sector=TOTALS), variables ("grid_id"  "co2_emission_km")
+  - __co2_emission__: co2_emissions_density.csv, [Global Greenhouse Gas Emissions - EDGAR v8.0](https://edgar.jrc.ec.europa.eu/gallery?release=v80ghg&substance=CO2&sector=TOTALS), variables ("grid_id"  "co2_emission_km2")
 
 - __scripts__ (R code to generate __maps__ and __data__):
   
