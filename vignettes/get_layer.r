@@ -38,7 +38,7 @@ get_layer <- function(layer) {
     ),
     url = c(
       "https://raw.githubusercontent.com/lbarqueira/pt1_db/main/data/population/human_pop_density.csv", #1 # nolint
-      "https://raw.githubusercontent.com/lbarqueira/pt1_db/main/data/population/human_pop_density.csv" #2 # nolint
+      "https://raw.githubusercontent.com/lbarqueira/pt1_db/main/data/co2_emission/co2_emissions_density.csv" #2 # nolint
     )
   ) |>
     filter(name == layer)
@@ -61,3 +61,5 @@ summary(pop)
 #  Mean   : 504.5   Mean   : 109.23
 #  3rd Qu.: 756.2   3rd Qu.:  70.07
 #  Max.   :1008.0   Max.   :6201.82
+
+co2_density <- get_layer(layer = "co2")
