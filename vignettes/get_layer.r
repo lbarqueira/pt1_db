@@ -5,7 +5,7 @@
 #
 # Layers:
 # - Human population density from Global Human Settlement Layer (GHSL) / km2
-# - (...)
+# - Greenhouse Gas Emissions, CO2, density from EDGAR v8.0 / ktons per km2
 ############################################################################
 
 # 1. INSTALL & LOAD PACKAGES
@@ -63,3 +63,14 @@ summary(pop)
 #  Max.   :1008.0   Max.   :6201.82
 
 co2_density <- get_layer(layer = "co2")
+
+names(co2_density) # [1] "grid_id"          "co2_emission_km2"
+nrow(co2_density) # [1] 1008
+summary(co2_density)
+#     grid_id       co2_emission_km2
+#  Min.   :   1.0   Min.   : 0.00000
+#  1st Qu.: 252.8   1st Qu.: 0.02977
+#  Median : 504.5   Median : 0.10620
+#  Mean   : 504.5   Mean   : 0.39231
+#  3rd Qu.: 756.2   3rd Qu.: 0.27055
+#  Max.   :1008.0   Max.   :16.01825
