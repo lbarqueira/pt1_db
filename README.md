@@ -35,8 +35,8 @@ The content presented in this repo will be used in a future package (still under
 
   - __data_wrangling_co2_emissions.r__: R code to generate CO2 emission density in ktons per km2.
 
-- __vignettes__: practical examples to help users get the most out of this containts. 
-  
+- __vignettes__: practical examples to help users get the most out of this repo. 
+
   - __get_map.r__: R code to implement __get_map()__, a function that loads hex gridded map of Mainland Portugal with 100km2 area for each (not all) hex polygon, __from GitHub__
   
   - __get_layer.r__: R code to implement __get_layer(layer)__, a function that loads a .csv file with columns grid_id and the layer to analyse (population per km2, ...), the results from files on the __scripts__ directory.
@@ -60,3 +60,7 @@ __Script file: get_map.r__
 __Script file: population.r__  
 
 !["Mainland Portugal Population Density per km2"](./plots/population_density.png)
+
+__Script file: co2_emissions.r__  
+
+!["Mainland Portugal CO2 Emissions per km2"](./plots/co2_emissions_density.png)
