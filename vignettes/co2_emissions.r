@@ -46,6 +46,14 @@ ggplot(hex_map) +
 #############################################
 
 library(scico)
+library(colorspace)
+
+my_palette <- scico::scico(6, palette = "acton", direction = -1)
+
+my_palette
+# [1] "#F0EAF9" "#E1B2CE" "#CA7199" "#85648D" "#4E4674" "#260C3F"
+
+swatchplot(my_palette)
 
 ggplot(hex_map) +
   geom_sf(aes(fill = co2_emission_km2), color = NA) +
@@ -54,7 +62,43 @@ ggplot(hex_map) +
     palette = "acton",
     direction = -1 # To reverse color palette
   ) +
-  theme_void()
+  theme_void() +
+  theme(
+    plot.title = element_text(
+      face = "bold",
+      size = 12,
+      color = "#260C3F",
+      hjust = .5,
+      vjust = -2
+    ),
+    plot.subtitle = element_text(
+      size = 8,
+      color = "#260C3F",
+      hjust = .5,
+      vjust = -3
+    ),
+    plot.caption = element_text(
+      size = 6,
+      color = "#260C3F",
+      hjust = .5,
+      vjust = 10 # 5
+    ),
+    legend.title = element_text(size = 9, vjust = 1, hjust = .5), #change legend title font size
+    legend.text = element_text(size = 8), #change legend text font size
+    plot.background = element_rect(fill = "gray99", color = NA)
+  ) +
+  labs(
+    title = "Mainland Portugal CO2 Emissions per km2",
+    subtitle = "Hexagonal Grid of 100km2",
+    caption = "Graphic: @barqueira | Data: Global Greenhouse Gas Emissions - EDGAR v8.0, 2022"
+  )
+
+# ficheiro removido ...
+ggsave(
+  filename = "./plots/co2_emissions_density_choropleth.png",
+  width = 7, height = 7, dpi = 600, bg = "gray99"
+)
+
 
 # Time to convert this choropleth in a point valued map!
 # Point valued maps from vectors
