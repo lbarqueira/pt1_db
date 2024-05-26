@@ -25,7 +25,7 @@ get_map <- function(type = "hex_100") {
   ) |>
     filter(name == type)
 
-  ext <- tb$url
+  ext <- sf::read_sf(tb$url)
 
   return(ext)
 }
