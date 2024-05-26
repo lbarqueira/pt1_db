@@ -23,7 +23,7 @@ get_map <- function(type = "hex_100") {
     ),
     url = c(
       "https://raw.githubusercontent.com/lbarqueira/pt1_db/main/maps/hex_cropped_portugal_100km2.gpkg",
-      "https://raw.githubusercontent.com/lbarqueira/pt1_db/main/maps/hex_cropped_portugal_25km2.gpkg",
+      "https://raw.githubusercontent.com/lbarqueira/pt1_db/main/maps/hex_cropped_portugal_25km2.gpkg"
     )
   ) |>
     filter(name == type)
