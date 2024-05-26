@@ -83,7 +83,7 @@ ggplot(hex_map) +
       hjust = .5,
       vjust = 10 # 5
     ),
-    legend.title = element_text(size = 9, vjust = 1, hjust = .5), #change legend title font size
+    legend.title = element_text(size = 9, vjust = 1, hjust = .5),
     legend.text = element_text(size = 8), #change legend text font size
     plot.background = element_rect(fill = "gray99", color = NA)
   ) +
@@ -93,7 +93,6 @@ ggplot(hex_map) +
     caption = "Graphic: @barqueira | Data: Global Greenhouse Gas Emissions - EDGAR v8.0, 2022"
   )
 
-# ficheiro removido ...
 ggsave(
   filename = "./plots/co2_emissions_density_choropleth.png",
   width = 7, height = 7, dpi = 600, bg = "gray99"
@@ -165,11 +164,6 @@ portugal_transformed <- portugal_sf |>
 
 ################# PLOT 1 ################################
 ggplot() +
-#  geom_sf(
-#    portugal_transformed,
-#    mapping = aes(geometry = geometry),
-#    color = "black", fill = "white"
-#  ) +
   geom_sf(
     hex_map,
     mapping = aes(geometry = geom),
@@ -228,11 +222,6 @@ ggsave(
 
 ################# PLOT 2 ################################
 ggplot() +
-#  geom_sf(
-#    portugal_transformed,
-#    mapping = aes(geometry = geometry),
-#    color = "black", fill = "white"
-#  ) +
   geom_sf(
     hex_map,
     mapping = aes(geometry = geom),
