@@ -27,7 +27,7 @@ get_map <- function(type = "hex_100") {
       "https://raw.githubusercontent.com/lbarqueira/pt1_db/main/maps/square_cropped_portugal_100km2.gpkg" # nolint
     )
   ) |>
-    tidyverse::filter(name == type)
+    dplyr::filter(name == type)
 
   ext <- sf::read_sf(tb$url)
 
