@@ -13,7 +13,7 @@
 
 ###########  get_layer() - function implementation #######################
 get_layer <- function(layer) {
-  tb <- tidyverse::tibble(
+  tb <- dplyr::tibble(
     name = c(
       "human", #1 - Human population density from GHSL
       "co2" #2 - CO2 emissions
@@ -23,7 +23,7 @@ get_layer <- function(layer) {
       "https://raw.githubusercontent.com/lbarqueira/pt1_db/main/data/co2_emission/co2_emissions_density.csv" #2 # nolint
     )
   ) |>
-    tidyverse::filter(name == layer)
+    dplyr::filter(name == layer)
 
   ext <- readr::read_csv(tb$url)
 
