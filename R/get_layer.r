@@ -6,11 +6,14 @@
 # Layers:
 # - Human population density from Global Human Settlement Layer (GHSL) / km2
 # - Greenhouse Gas Emissions, CO2, density from EDGAR v8.0 / ktons per km2
+# -
+# -
+# -
 ############################################################################
 
 ###########  get_layer() - function implementation #######################
 get_layer <- function(layer) {
-  tb <- tibble(
+  tb <- tidyverse::tibble(
     name = c(
       "human", #1 - Human population density from GHSL
       "co2" #2 - CO2 emissions
@@ -20,9 +23,9 @@ get_layer <- function(layer) {
       "https://raw.githubusercontent.com/lbarqueira/pt1_db/main/data/co2_emission/co2_emissions_density.csv" #2 # nolint
     )
   ) |>
-    filter(name == layer)
+    tidyverse::filter(name == layer)
 
-  ext <- read_csv(tb$url)
+  ext <- readr::read_csv(tb$url)
 
   return(ext)
 }
