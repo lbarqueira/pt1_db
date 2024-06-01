@@ -1,6 +1,23 @@
 source("https://raw.githubusercontent.com/lbarqueira/pt1_db/main/R/get_map.r")
 source("https://raw.githubusercontent.com/lbarqueira/pt1_db/main/R/get_layer.r")
 
+libs <- c(
+  "tidyverse"
+)
+
+installed_libs <- libs %in% rownames(
+  installed.packages()
+)
+
+if (any(installed_libs == FALSE)) {
+  install.packages(
+    libs[!installed_libs]
+  )
+}
+
+# load libraries
+invisible(lapply(libs, library, character.only = TRUE))
+
 hex <- get_map() |>
   # Join layer with the hexagonal grid
   left_join(get_layer(layer = "human"))

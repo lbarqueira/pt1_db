@@ -15,7 +15,7 @@
 # -
 
 get_map <- function(type = "hex_100") {
-  tb <- tidyverse::tibble(
+  tb <- dplyr::tibble(
     name = c(
       "hex_100", #1 - Load 100km2 gridded hexagonal map for Mainland Portugal
       "hex_25",   #2 - Load 25km2 gridded hexagonal map for Mainland Portugal
