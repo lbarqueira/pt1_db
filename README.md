@@ -16,7 +16,8 @@ The content presented in this repo will be used in a future package (still under
 
     - utm10+ilhas.gpkg, downloaded from [Atlas of Mammals in Portugal, GitHub Repo](https://github.com/AMBarbosa/AtlasMamPor/tree/master/mapas)
 
-- __data__: __data__ is strictly related with __map__ (Gridded map of Mainland Portugal in hexagons of about 100 km2), through the variable __grid_id__ which is present in both files. Data was worked out based on the grid of the map
+- __data__: strictly related with __map__ (Gridded map of Mainland Portugal in hexagons of about 100 km2), through the variable __grid_id__ which is present in both files. Data was worked out based on the grid of the map
+  
   - __population__: human_pop_density.csv, [GHSL - Global Human Settlement Layer](https://human-settlement.emergency.copernicus.eu/download.php?ds=pop), variables ("grid_id"  "population_km2")
 
   - __co2_emission__: co2_emissions_density.csv, [Global Greenhouse Gas Emissions - EDGAR v8.0](https://edgar.jrc.ec.europa.eu/gallery?release=v80ghg&substance=CO2&sector=TOTALS), variables ("grid_id"  "co2_emission_km2")
@@ -37,9 +38,10 @@ The content presented in this repo will be used in a future package (still under
 
 - __vignettes__: practical examples to help users get the most out of this repo. 
 
-  - __get_map.r__: R code to implement __get_map()__, a function that loads hex gridded map of Mainland Portugal with 100km2 area for each (not all) hex polygon, __from GitHub__
+  - __plot_map.r__: R code that uses __get_map()__ function to load hex gridded map of Mainland Portugal with 100km2 area for each polygon (not all - because is cropped by Mainland Portugal geometry), and creates the respective plot;
   
-  - __get_layer.r__: R code to implement __get_layer(layer)__, a function that loads a .csv file with columns grid_id and the layer to analyse (population per km2, ...), the results from files on the __scripts__ directory.
+  - __get_layer.r__: R code to implement __get_layer(layer)__, a function that loads a .csv file with columns grid_id and the layer to analyse (population per km2, ...), the results from files on the 
+  __scripts__ directory.
     - layer = "human", human population per km2
     - layer = "co2", co2 emissions per km2
     - layer = 

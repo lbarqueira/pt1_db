@@ -1,11 +1,9 @@
-############################################################################
-#   FUNCTION    get_map()        HEX MAP 100km2 LOAD from GitHub
-############################################################################
+###############################################################################
+source("https://raw.githubusercontent.com/lbarqueira/pt1_db/main/R/get_map.r")
 
 # 1. INSTALL & LOAD PACKAGES
 libs <- c(
-  "tidyverse",
-  "sf"
+  "tidyverse"
 )
 
 installed_libraries <- libs %in% rownames(
@@ -24,17 +22,6 @@ invisible(
   )
 )
 
-###########          LOAD HEX MAP FROM GITHUB         #######################
-###########  GITHUB -  VIEW RAW AND COPY LINK ADDRESS #######################
-
-# Function get_map
-get_map <- function() {
-  hex <- sf::read_sf(
-    "https://raw.githubusercontent.com/lbarqueira/pt1_db/main/maps/hex_cropped_portugal_100km2.gpkg"
-  )
-  return(hex)
-}
-
 hex <- get_map()
 
 hex |>
@@ -46,9 +33,9 @@ hex |>
 length(hex$grid_id) # 1008
 class(hex) # [1] "sf"         "tbl_df"     "tbl"        "data.frame"
 glimpse(hex)
-st_crs(hex) # (...) EPSG ,25829
+sf::st_crs(hex) # (...) EPSG ,25829
 names(hex) # [1] "grid_id" "geom"
-summary(st_area(hex))
+summary(sf::st_area(hex))
 
 #      Min.   1st Qu.    Median      Mean   3rd Qu.      Max.
 #     13675 100000000 100000000  88033798 100000000 100000000
@@ -69,4 +56,4 @@ hex |>
   labs(
     title = "Mainland Portugal Map, HEX GRID w/100km2 area (GitHub)"
   )
-ggsave("./plots/hex_map_100km2.png", dpi = 340)
+ggplot2::ggsave("./plots/hex_map_100km2.png", dpi = 340)
