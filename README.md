@@ -52,10 +52,9 @@ __Note:__ This repository is inspired by the work carried out by __Benjamin Nowa
 
 ### Plots from vignettes ###
 
-__Script file: get_map.r__  
+__Script file: plot_map.r__  
 
 !["Mainland Portugal Map, HEX GRID w/100km2 area"](./plots/hex_map_100km2.png)
-
 
 __Script file: population.r__  
 
@@ -64,3 +63,7 @@ __Script file: population.r__
 __Script file: co2_emissions.r__  
 
 !["Mainland Portugal CO2 Emissions per km2"](./plots/co2_emissions_density.png)
+
+__Script file: correlation.r__  
+
+!["Correlation between population/km2 and CO2 emissions/km2"](./plots/correlation_co2_pop.png)
