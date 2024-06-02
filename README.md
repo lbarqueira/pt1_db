@@ -40,7 +40,7 @@ The content presented in this repo will be used in a future package (still under
 
   - __plot_map.r__: R code that uses __get_map()__ function to load hex gridded map of Mainland Portugal with 100km2 area for each polygon (not all - because is cropped by Mainland Portugal geometry), and creates the respective plot;
   
-  - __get_layer.r__: R code to implement __get_layer(layer)__, a function that loads a .csv file with columns grid_id and the layer to analyse (population per km2, ...), the results from files on the 
+  - __analyze_layers.r__: R code to analyze __get_layer(layer)__, a function that loads a .csv file with columns grid_id and the layer to analyze (population per km2, co2 emissions per km2, ...), the results from files on the 
   __scripts__ directory.
     - layer = "human", human population per km2
     - layer = "co2", co2 emissions per km2
