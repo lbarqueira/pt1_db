@@ -3,15 +3,25 @@
 #                  get_map()
 #                get_layer(layer)
 #########################################################
-
-# NOTA: Terei ainda de explorar melhor outra forma de carregar as funções
-# uma vez que com source ele corre o ficheiro na sua totalidade.
-# Eventualmente apenas incluir as definições das funções para aí
-# sim, só chamá-las aqui.
-
-source("https://raw.githubusercontent.com/lbarqueira/pt1_db/main/vignettes/get_layer.r")
 source("https://raw.githubusercontent.com/lbarqueira/pt1_db/main/R/get_map.r")
+source("https://raw.githubusercontent.com/lbarqueira/pt1_db/main/R/get_layer.r")
 
+libs <- c(
+  "tidyverse"
+)
+
+installed_libs <- libs %in% rownames(
+  installed.packages()
+)
+
+if (any(installed_libs == FALSE)) {
+  install.packages(
+    libs[!installed_libs]
+  )
+}
+
+# load libraries
+invisible(lapply(libs, library, character.only = TRUE))
 
 co2_density <- get_layer("co2")
 
@@ -21,13 +31,16 @@ nrow(co2_density) # [1] 1008
 
 hex_map <- get_map() |>
   # Join static layer with the hexagonal grid
-  left_join(co2_density)
+  dplyr::left_join(
+    co2_density,
+    by = join_by(grid_id)
+  )
 
 class(hex_map)
 # [1] "sf"         "tbl_df"     "tbl"        "data.frame"
 names(hex_map) # [1] "grid_id"    "geom"   "co2_emission_km2"
 nrow(hex_map) # [1] 1008
-st_crs(hex_map) # "EPSG",25829
+sf::st_crs(hex_map) # "EPSG",25829
 
 
 ggplot(hex_map) +
@@ -53,12 +66,12 @@ my_palette <- scico::scico(6, palette = "acton", direction = -1)
 my_palette
 # [1] "#F0EAF9" "#E1B2CE" "#CA7199" "#85648D" "#4E4674" "#260C3F"
 
-swatchplot(my_palette)
+colorspace::swatchplot(my_palette)
 
 ggplot(hex_map) +
   geom_sf(aes(fill = co2_emission_km2), color = NA) +
   labs(fill = "ktons per km2") +
-  scale_fill_scico(
+  scico::scale_fill_scico(
     palette = "acton",
     direction = -1 # To reverse color palette
   ) +
@@ -115,7 +128,7 @@ ggplot(grd_simple) +
 # Second step is to extract centroid for each cell of the basemap
 
 grd_cent <- grd_simple |>
-  st_centroid()
+  sf::st_centroid()
 
 ggplot(grd_cent) +
   geom_sf()
@@ -125,7 +138,7 @@ ggplot(grd_cent) +
 
 # Intersect grid with polygons
 grd <- grd_cent |>
-  st_intersection(hex_map)
+  sf::st_intersection(hex_map)
 
 ggplot(grd, aes(size = co2_emission_km2)) +
   geom_sf() +
