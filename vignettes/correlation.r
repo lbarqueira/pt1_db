@@ -21,7 +21,10 @@ invisible(lapply(libs, library, character.only = TRUE))
 
 hex <- get_map() |>
   # Join layer with the hexagonal grid
-  left_join(get_layer(layer = "human"))
+  dplyr::left_join(
+    get_layer(layer = "human"),
+    by = join_by(grid_id)
+  )
 
 
 ggplot(hex) +
@@ -31,7 +34,7 @@ ggplot(hex) +
   ) +
   scale_fill_gradient(
     low = "#fff95b",
-    high= "#ff930f",
+    high = "#ff930f",
     na.value = "grey95"
   ) +
   theme_void()
@@ -39,7 +42,10 @@ ggplot(hex) +
 
 data <- get_layer(layer = "co2") |>
   # Join layer with population per km2 distribution
-  left_join(get_layer(layer = "human"))
+  left_join(
+    get_layer(layer = "human"),
+    by = join_by(grid_id)
+  )
 
 # Compare the two data
 ggplot(data, aes(x = population_km2, y = co2_emission_km2)) +
