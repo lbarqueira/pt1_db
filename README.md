@@ -44,8 +44,8 @@ The content presented in this repo will be used in a future package (still under
   __scripts__ directory.
     - layer = "human", human population per km2
     - layer = "co2", co2 emissions per km2
-    - layer = 
-    - layer = 
+    - layer = "gas_stations", number of gas stations per km2
+    - layer = ...
 
   - __population.r__: R code exemplifying the application of functions __get_map()__ and __get_layer(layer)__, to layer = "human" (population per km2)  
 

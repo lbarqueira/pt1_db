@@ -46,3 +46,9 @@ summary(co2_density)
 #  Mean   : 504.5   Mean   : 0.39231
 #  3rd Qu.: 756.2   3rd Qu.: 0.27055
 #  Max.   :1008.0   Max.   :16.01825
+
+gas_stations_denstity <- get_layer(layer = "gas_stations")
+
+names(gas_stations_denstity)
+nrow(gas_stations_denstity)
+summary(gas_stations_denstity)
