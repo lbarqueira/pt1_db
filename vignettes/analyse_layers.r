@@ -49,6 +49,13 @@ summary(co2_density)
 
 gas_stations_denstity <- get_layer(layer = "gas_stations")
 
-names(gas_stations_denstity)
-nrow(gas_stations_denstity)
+names(gas_stations_denstity) # [1] "grid_id"     "gas_stations_km2"
+nrow(gas_stations_denstity) # [1] 1008
 summary(gas_stations_denstity)
+#     grid_id       gas_stations_km2
+#  Min.   :   1.0   Min.   :0.000
+#  1st Qu.: 252.8   1st Qu.:0.000
+#  Median : 504.5   Median :0.010
+#  Mean   : 504.5   Mean   :0.122
+#  3rd Qu.: 756.2   3rd Qu.:0.090
+#  Max.   :1008.0   Max.   :7.473
