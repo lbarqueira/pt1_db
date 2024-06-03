@@ -22,6 +22,8 @@ The content presented in this repo will be used in a future package (still under
 
   - __co2_emission__: co2_emissions_density.csv, [Global Greenhouse Gas Emissions - EDGAR v8.0](https://edgar.jrc.ec.europa.eu/gallery?release=v80ghg&substance=CO2&sector=TOTALS), variables ("grid_id"  "co2_emission_km2")
 
+  - __gas_stations__: gas_stations_density.csv, Data: @OpenStreetMap contributors, variables ("grid_id"  "gas_stations_km2")
+
 - __scripts__ (R code to generate __maps__ and __data__):
   
   - __hex_map_100.r__: R code to generate hexagonal grid map of Mainland Portugal, __cropped__ by Mainland geometry (border), with 100 km2 area for each (not all) hex polygon. The output of this script is present on the folder __maps__.  
@@ -35,6 +37,8 @@ The content presented in this repo will be used in a future package (still under
   - __data_wrangling_population.r__: R code to generate Human population density per km2.
 
   - __data_wrangling_co2_emissions.r__: R code to generate CO2 emission density in ktons per km2.
+
+  - __data_wrangling_osm_data.r__: R code to generate number of Gas Stations per km2.
 
 - __vignettes__: practical examples to help users get the most out of this repo. 
 
