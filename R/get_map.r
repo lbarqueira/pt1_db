@@ -2,8 +2,7 @@
 #   FUNCTION    get_map(type)     HEX MAP 100km2 LOAD from GitHub by default
 #   ALL maps on Projected CRS: ETRS89 / UTM zone 29N
 ############################################################################
-
-
+#
 # Load 100km2 gridded hexagonal map for Mainland Portugal by default
 #
 # Function to add the gridded hexagonal map of Mainland Portugal by default.
