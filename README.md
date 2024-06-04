@@ -60,7 +60,7 @@ The content presented in this repo will be used in a future package (still under
   - __gas_stations.r__: R code to generate plot __gas_stations_density_choropleth.png__
 
 
-__Note:__ This repository is inspired by the work carried out by __Benjamin Nowak (@BjnNowak)__  
+
 
 ### Plots from vignettes ###
 
@@ -83,3 +83,10 @@ __Vignette file: correlation.r__
 __Vignette file: gas_stations.r__  
 
 !["Mainland Portugal Gas Stations per km2"](./plots/gas_stations_density_choropleth.png)
+
+
+### Credits to /  References: ###
+
+__Note:__ This repository is primarlly inspired by the work carried out by __Benjamin Nowak (@BjnNowak)__ with its amazing package [{frex}](https://github.com/BjnNowak/frex/tree/main)
+
+[How to fill maps with density gradients with R, {ggplot2}, and {sf}](https://www.andrewheiss.com/blog/2023/07/28/gradient-map-fills-r-sf/)
